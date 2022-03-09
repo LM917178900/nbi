@@ -1,24 +1,25 @@
 ## 构建多模块项目(同 npi 系统)
-1. 项目结构
+#### 1. 项目结构
 项目名称nbi-portal-server
 
 包含三个模块：common-platform/portal/data-center
-common-platform：
+
+##### common-platform：
 包结构：com.only.platform
 系统结构：common
 包含包: model/util/vo/...
 
-portal:
+##### portal:
 包结构：com.only.nbi
 系统结构：portal.module.module_name_xxx
 包含包：controller/service/model/util/vo/domain/mapper...
 
-data-center
+##### data-center
 包结构：com.only.nbi
 系统结构：auth.center
 包含包：controller/service/model/util/vo/domain/mapper...
 
-2.项目阶段：
+#### 2.项目阶段：
 新建系统：
 新建模块：
 新建包：
