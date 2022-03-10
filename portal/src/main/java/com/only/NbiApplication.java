@@ -1,4 +1,4 @@
-package com.only.nbi;
+package com.only;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
