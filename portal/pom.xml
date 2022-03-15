@@ -8,7 +8,6 @@
     <version>0.0.1-SNAPSHOT</version>
    </parent>
 
-    <groupId>com.only.nbi</groupId>
     <artifactId>portal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>portal</name>
@@ -21,12 +20,12 @@
     <dependencies>
         <dependency>
             <groupId>com.only</groupId>
-            <artifactId>platform</artifactId>
+            <artifactId>common-platform</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.only.nbi</groupId>
-            <artifactId>auth</artifactId>
+            <groupId>com.only</groupId>
+            <artifactId>data-center</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

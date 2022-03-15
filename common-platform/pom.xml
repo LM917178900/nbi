@@ -8,8 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.only</groupId>
-    <artifactId>platform</artifactId>
+    <artifactId>common-platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>platform</name>
 

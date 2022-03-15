@@ -8,8 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.only.nbi</groupId>
-    <artifactId>auth</artifactId>
+    <artifactId>data-center</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>auth</name>
 
@@ -20,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.only</groupId>
-            <artifactId>platform</artifactId>
+            <artifactId>common-platform</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
