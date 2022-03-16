@@ -47,14 +47,7 @@
 
     <build>
         <resources>
-            <resource>
-                <!-- 设定主资源目录 -->
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
+            <!--            配置 java 文件打包来源，没有的话会打包失败-->
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
@@ -63,6 +56,14 @@
                 </includes>
                 <filtering>true</filtering>
             </resource>
+            <!--             定义 application 等配置文件打包，否则生产的jar 中没有配置项-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
         </resources>
 
         <plugins>
@@ -70,7 +71,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-<!--            配置启动类，否则，生成的jar 中没有启动类-->
+            <!--            配置启动类，否则，生成的jar 中没有启动类-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
