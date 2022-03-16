@@ -5,7 +5,7 @@
 包含三个模块：common-platform/portal/data-center
 
 ##### common-platform：
-包结构：com.only.platform
+包结构：com.only.nbi.platform
 系统结构：common
 包含包: model/util/vo/...
 
