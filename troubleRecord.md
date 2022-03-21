@@ -28,9 +28,24 @@ Reason: Failed to determine a suitable driver class
 Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project data-center: Compilation failure: Compilation failure:
 程序包com.only.nbi.platform.common.model不存在
 原因：spring-boot-maven-plugin 用这个插件打包的Jar包可以直接运行，但是不可依赖
+每个插件修改为如下配置：
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>execute</classifier>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>none</phase>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-
-
+9.
 
 
 
