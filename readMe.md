@@ -25,8 +25,9 @@
 新建包： V
 配置数据库： V
 调试数据库：V
-跨模块调用：
-打包配置：
+跨模块调用：V
+全量打包maven配置：V (nbi-server-execute.jar)
+增量打包maven配置：
 保存到 github: V
 发布到远程maven仓库：(需要注册一个mvn账户)
 项目被其他项目依赖： V

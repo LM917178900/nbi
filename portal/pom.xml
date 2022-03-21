@@ -5,11 +5,11 @@
    <parent>
     <groupId>com.only</groupId>
     <artifactId>nbi</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
    </parent>
 
     <artifactId>portal</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>portal</name>
 
 
@@ -21,16 +21,17 @@
         <dependency>
             <groupId>com.only</groupId>
             <artifactId>common-platform</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>com.only</groupId>
             <artifactId>data-center</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
     <build>
+        <finalName>nbi-server</finalName>
         <resources>
             <!--            配置 java 文件打包来源，没有的话会打包失败-->
             <resource>
