@@ -1,0 +1,24 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://10.122.72.171:5432/mbg_test?currentSchema=public
+    username: postgres
+    password: ThW4Zj~fSg
+    druid:
+      filter:
+        wall:
+          enabled: true
+          db-type: postgresql
+          config:
+            drop-table-allow: true
+            truncate-allow: true
+            alter-table-allow: true
+            create-table-allow: true
+            comment-allow: true
+
+  # Redis
+  redis:
+    database: 1
+    host: 10.122.81.80
+    password: qwe321asd
+    port: 6379
