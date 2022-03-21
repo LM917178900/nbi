@@ -22,6 +22,6 @@ public class BetaServiceImpl implements BetaService {
     @Override
     public TestPk getByName(String name){
        TestPk testPk =  betaMapper.getByName(name);
-        return null;
+        return testPk;
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.only.nbi.auth.center.mapper.BetaMapper">
-    <select id="getById" resultType="com.only.nbi.platform.common.model.TestPk">
+    <select id="getByName" resultType="com.only.nbi.platform.common.model.TestPk">
         SELECT * FROM test_pk where name =#{param}
     </select>
 </mapper>

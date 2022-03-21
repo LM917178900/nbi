@@ -24,6 +24,12 @@ Reason: Failed to determine a suitable driver class
 子模块 resources 需要单独配置，不能继承；
 注意配置类型 <include>**/*.yml</include>
 
+8.跨模块api:mvn clean install failed
+Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project data-center: Compilation failure: Compilation failure:
+程序包com.only.nbi.platform.common.model不存在
+原因：spring-boot-maven-plugin 用这个插件打包的Jar包可以直接运行，但是不可依赖
+
+
 
 
 
