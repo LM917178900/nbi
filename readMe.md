@@ -19,7 +19,7 @@
 系统结构：auth.center
 包含包：controller/service/model/util/vo/domain/mapper...
 
-#### 2.项目阶段：
+#### 2.需要实现的基本功能：
 新建系统：V
 新建模块： V
 新建包： V
@@ -27,16 +27,18 @@
 调试数据库：V
 跨模块调用：V
 全量打包maven配置：V (nbi-server-execute.jar)
-增量打包maven配置：
+增量打包maven配置：V (nbi-server-assembly.zip + nbi-server.jar)
 保存到 github: V
-发布到远程maven仓库：(需要注册一个mvn账户)
+发布到内网服务器maven仓库：(需要注册一个mvn账户) X
 项目被其他项目依赖： V
 
-#### 3. 其他任务
+#### 3. 其他非关键功能
 配置 sql 日志打印；
 配置 重启后编译修改的文件；
 
-配置restApi 接口调用
+配置直接 URL 接口调用
+配置 restApi 接口调用
+配置 nacos 接口调用
 配置 feign 接口调用
 
 
