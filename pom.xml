@@ -22,6 +22,7 @@
         <module>portal</module>
         <module>data-center</module>
         <module>common-platform</module>
+        <module>nbi-client</module>
     </modules>
 
     <dependencies>
