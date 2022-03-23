@@ -45,7 +45,28 @@ Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:comp
                 </executions>
             </plugin>
 
-9.
+9.feign 消费者启动失败
+java.lang.NoClassDefFoundError: org/springframework/cloud/context/named/NamedContextFactory$Specification
+缓存问题，重新编译
+
+10.feign 服务者启动失败
+java.lang.NoClassDefFoundError: org/springframework/boot/bind/RelaxedDataBinder
+此依赖导致：
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-core</artifactId>
+            <version>1.4.7.RELEASE</version>
+        </dependency>
+更换包，只在client-pom 添加依赖
+
+11.引入的 feign 类 报红；
+依赖的 jar 包有问题，可以引入其他项目的 jar 验证；
+jar包中存在BOOT-INF目录，导致无法被依赖；
+
+12. 打的包没有被成功安装；
+添加打包配置（assembly.xml/upgrade-assembly.xml）
+
+
 
 
 
