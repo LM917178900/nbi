@@ -97,4 +97,26 @@
             </plugin>
         </plugins>
     </build>
+    <!--MAVEN打包选择运行环境-->
+    <!-- 1:dev:开发环境 2:test 3:uat 用户验收测试 4.prod:生产环境 -->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 </project>
