@@ -38,30 +38,42 @@
 
     <build>
         <finalName>nbi-server</finalName>
+
         <resources>
-            <!--            配置 java 文件打包来源，没有的话会打包失败-->
+            <!-- 资源文件配置 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>config/**</exclude>
+                </excludes>
+            </resource>
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
-                    <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
                 <filtering>true</filtering>
             </resource>
-            <!--             定义 application 等配置文件打包，否则生产的jar 中没有配置项-->
+
+            <!-- 过滤配置文件到config目录 -->
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/main/resources/config</directory>
+                <filtering>true</filtering>
+                <targetPath>config</targetPath>
                 <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                    <include>**/*.yml</include>
+                    <include>application.yml</include>
+                    <include>application-${profileActive}.yml</include>
+                    <include>banner.txt</include>
+                    <include>*.xml</include>
+                    <include>*.properties</include>
                 </includes>
             </resource>
+
         </resources>
 
-
         <plugins>
-            <!-- 由于没有直接继承spring-boot-starter-parent，此处需要添加主类和设置repackage -->
+            <!-- 由于没有直接继承spring-boot-starter-parent，此处修添加主类和设置repackage -->
             <!--<plugin>
                  <groupId>org.springframework.boot</groupId>
                  <artifactId>spring-boot-maven-plugin</artifactId>
@@ -79,40 +91,32 @@
                  </executions>
              </plugin>-->
 
-            <!--jar包生成插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
-<!--                    配置启动类-->
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <mainClass>com.only.nbi.NbiApplication</mainClass>
                         </manifest>
                     </archive>
-<!--                    排除配置项 ？ -->
                     <excludes>
                         <exclude>config/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>
 
-<!--            配置依赖包插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-<!--                配置行为-->
                 <executions>
                     <execution>
                         <id>copy-lib</id>
-<!--                        生命阶段：准备包阶段，不指定不会被执行？-->
                         <phase>prepare-package</phase>
-<!--                        行为：复制依赖-->
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
-<!--                        范围：运行时、只复制新增的依赖-->
                         <configuration>
                             <outputDirectory>${project.build.directory}/lib</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
@@ -124,14 +128,12 @@
                 </executions>
             </plugin>
 
-<!--            资源插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${maven-resources-plugin.version}</version>
             </plugin>
 
-<!--            maven 编译插件配置-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -165,14 +167,12 @@
                 </configuration>
             </plugin>
 
-            <!-- 打包插件 私服中央仓库？-->
+            <!-- 打包插件 -->
             <plugin>
-<!--                默认group_id ？-->
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
                     <finalName>${project.build.finalName}</finalName>
-<!--                    配置增量包和全量包的打包配置文件-->
                     <descriptors>
                         <descriptor>src/main/assembly/assembly.xml</descriptor>
                         <descriptor>src/main/assembly/upgrade-assembly.xml</descriptor>
@@ -181,17 +181,15 @@
                 <executions>
                     <execution>
                         <id>make-assembly</id>
-<!--                        安装阶段进行 操作-->
                         <phase>install</phase>
                         <goals>
-<!--                            行为：？-->
                             <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
 
-            <!-- mybatis generator 自动生成代码插件:可以不用手动写jdbc 代码 -->
+            <!-- mybatis generator 自动生成代码插件 -->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -203,6 +201,7 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 
 </project>

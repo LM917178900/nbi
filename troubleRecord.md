@@ -62,11 +62,19 @@ java.lang.NoClassDefFoundError: org/springframework/boot/bind/RelaxedDataBinder
 11.引入的 feign 类 报红；
 依赖的 jar 包有问题，可以引入其他项目的 jar 验证；
 jar包中存在BOOT-INF目录，导致无法被依赖；
+原因：使用了下面插件会生成 BOOT-INFO目录，应该使用其他的插件，直接生成 com 目录；
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
 12. 打的包没有被成功安装；
 添加打包配置（assembly.xml/upgrade-assembly.xml）
 
-
+13. install 失败
+报错：repackage failed: Unable to find main class 
+原因：非主类模块和parent模块，不能有 spring-boot-maven-plugin 下面插件
+办法：去掉重新 install 即可；
 
 
 
