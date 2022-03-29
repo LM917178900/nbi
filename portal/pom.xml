@@ -9,7 +9,6 @@
    </parent>
 
     <artifactId>portal</artifactId>
-    <version>1.0</version>
     <name>portal</name>
 
 
