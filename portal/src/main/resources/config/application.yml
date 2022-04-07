@@ -4,3 +4,12 @@ spring:
     active: '@profileActive@'
 server:
   port: 8081
+#logging:
+#  level:
+#    com:
+#      only:
+#        nbi: debug
+mybatis-plus:
+  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: com.only.nbi.portal.module.alfa.util.MybatisPlusOutImpl
